@@ -1,2 +1,3 @@
 # exp-nuxt-route-groups
-[Experiment] : Nuxt v3.13で追加されたRoute Groupsの実験repo
+
+[Experiment] : Nuxt v3.13 で追加された Route Groups の実験 repo

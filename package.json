@@ -1,0 +1,45 @@
+{
+  "name": "@shinGangan/exp-nuxt-route-groups",
+  "description": "Nuxt v3.13で追加されたRoute Groupsの実験repo",
+  "private": true,
+  "type": "module",
+  "author": {
+    "name": "shinGangan",
+    "url": "https://github.com/shinGangan"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shinGangan/exp-nuxt-route-groups.git"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": "🚨:Please use pnpm instead.",
+    "yarn": "🚨:Please use pnpm instead."
+  },
+  "packageManager": "pnpm@9.13.0",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev src/",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "^1.6.0",
+    "@nuxt/eslint-config": "^0.6.1",
+    "@nuxt/test-utils": "^3.14.4",
+    "@nuxt/ui": "^2.19.2",
+    "@vitest/eslint-plugin": "^1.1.10",
+    "eslint": "^9.14.0",
+    "eslint-plugin-n": "^17.13.1",
+    "eslint-plugin-tailwindcss": "^3.17.5",
+    "eslint-plugin-vue-scoped-css": "^2.8.1",
+    "eslint-plugin-vuejs-accessibility": "^2.4.1",
+    "nuxt": "^3.14.159"
+  },
+  "peerDependencies": {
+    "eslint": "^9.0.0"
+  }
+}
