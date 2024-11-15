@@ -40,4 +40,9 @@ export default createConfigForNuxt({
       'pluginVitest/consistent-test-it': ['error', { fn: 'it' }],
       'pluginVitest/require-top-level-describe': 'error'
     }
+  })
+  .override('nuxt/vue/rules', {
+    rules: {
+      'vue/multi-word-component-names': 'off'
+    }
   });
