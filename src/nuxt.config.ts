@@ -18,5 +18,10 @@ export default defineNuxtConfig({
   },
   future: {
     compatibilityVersion: 4
+  },
+  nitro: {
+    experimental: {
+      openAPI: true
+    }
   }
 });
