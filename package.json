@@ -12,7 +12,7 @@
     "url": "git+https://github.com/shinGangan/exp-nuxt-route-groups.git"
   },
   "engines": {
-    "node": ">=20.0.0",
+    "node": "^20.15.0 || >=22.0.0",
     "npm": "🚨:Please use pnpm instead.",
     "yarn": "🚨:Please use pnpm instead."
   },
@@ -37,7 +37,8 @@
     "eslint-plugin-tailwindcss": "^3.17.5",
     "eslint-plugin-vue-scoped-css": "^2.8.1",
     "eslint-plugin-vuejs-accessibility": "^2.4.1",
-    "nuxt": "^3.14.159"
+    "nuxt": "^3.14.159",
+    "vitest": "^2.1.5"
   },
   "peerDependencies": {
     "eslint": "^9.0.0"
