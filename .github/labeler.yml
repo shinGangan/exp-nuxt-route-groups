@@ -1,0 +1,15 @@
+'🏠 Chore':
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.github/**/*'
+          - '.vscode/*'
+
+'📝 Documentation':
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'docs/**/*'
+
+'🚀 Feature':
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'src/app/**/*'

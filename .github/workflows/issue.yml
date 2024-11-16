@@ -1,0 +1,66 @@
+name: Issue
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  set-label:
+    name: Set label
+    runs-on: ubuntu-22.04
+    timeout-minutes: 1
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            /**
+             * @typedef {Object} Label
+             * @property {string} regex - 検索文字列
+             * @property {string} label - ラベル名
+             */
+            /** @type {Label[]} */
+            const labels = [
+              { regex: /fix/, label: '🐞 Bugs' },
+              { regex: /chore/, label: '🏠 Chore' },
+              { regex: /docs/, label: '📝 Documentation' },
+              { regex: /feat/, label: '🚀 Feature' },
+            ];
+
+            const issueTitle = context.payload.issue.title;
+            const labelsToAdd = [];
+
+            labels.forEach(label => {
+              if (label.regex.test(issueTitle)) {
+                console.log(`Match: ${label.label}`);
+                labelsToAdd.push(label.label);
+              }
+            });
+
+            if (labelsToAdd.length > 0) {
+              github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.issue.number,
+                labels: labelsToAdd
+              });
+            }
+            console.info(`title: ${issueTitle}, labels: ${labelsToAdd.join(',')}`);
+
+  # ref: https://github.com/shinGangan/.github/blob/main/.github/workflows/issue.yml
+  set-issue:
+    uses: shinGangan/.github/.github/workflows/issue.yml@main
+    permissions:
+      contents: read
+      repository-projects: read
+      issues: write
+    with:
+      number: ${{ github.event.issue.number }}
+      title: ${{ github.event.issue.title }}
+      assignee: ${{ github.actor }}
+      # NOTE: 優先度低いので手動で更新する
+      milestone: 'v0.0.1'
+    secrets:
+      token: ${{ secrets.GITHUB_TOKEN }}
+      repo: ${{ github.repository }}
